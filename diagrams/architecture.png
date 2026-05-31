@@ -1,0 +1,20 @@
+Internet
+    |
+    v
+Internet Gateway
+    |
+    v
+VPC (10.0.0.0/16)
+    |
+    +------------------+
+    |                  |
+    v                  v
+
+Public Subnet AZ1   Public Subnet AZ2
+     |                    |
+     +------ NAT ---------+
+             |
+             v
+
+Private Subnet AZ1
+Private Subnet AZ2
