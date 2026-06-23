@@ -12,38 +12,7 @@ This project provisions a highly secure, isolated network topology split across 
                            (e.g., Load Balancers, Web Servers).
 * **Private Tier (App/DB):** Two isolated private subnets entirely cut off from direct inbound internet traffic, housing core business logic and databases.
 * **Outbound Connectivity:** A single, cost-optimized NAT Gateway deployed in the public tier acts as a secure one-way bridge,
-                            allowing private resources to fetch updates safely.
-+----------------------------------------------------------------------------+
-                          [ Internet Traffic (0.0.0.0/0) ]
-                                       |
-                                       v
-                           +---------------------+
-                           |   Internet Gateway  |
-                           +---------------------+
-                                       |
-                                       v
-
-+-----------------------------------------------------------------------+
-| AWS Region (us-east-1) - VPC (10.0.0.0/16)                            |
-|                                                                       |
-|  +----------------------+      +----------------------+              |
-|  | AZ 1 (us-east-1a)    |      | AZ 2 (us-east-1b)    |              |
-|  |                      |      |                      |              |
-|  | +------------------+ | ---> | +------------------+ |              |
-|  | | Public Subnet 1  | |      | | Public Subnet 2  | |              |
-|  | | 10.0.1.0/24      | |      | | 10.0.2.0/24      | |              |
-|  | | NAT Gateway      | |      | +------------------+ |              |
-|  | +------------------+ |      |          |           |              |
-|  |          |           |      |          v           |              |
-|  |          v           |      | +------------------+ |              |
-|  | +------------------+ |      | | Private Subnet 2 | |              |
-|  | | Private Subnet 1 | |      | | 10.0.11.0/24     | |              |
-|  | | 10.0.10.0/24     | |      | | App / Database   | |              |
-|  | | App / Database   | |      | +------------------+ |              |
-|  | +------------------+ |      |                      |              |
-|  +----------------------+      +----------------------+              |
-|                                                                       |
-+-----------------------------------------------------------------------+
+                           
 1. Infrastructure Topography
 
 ## Security & Networking Implementation
