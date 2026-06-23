@@ -1,0 +1,16 @@
+# Local .terraform directory
+.terraform/
+
+# Hide all state tracking files
+*.tfstate
+*.tfstate.*
+
+# Crash logs
+crash.log
+crash.*
+
+# Ignore local variable override files if you make them later
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
